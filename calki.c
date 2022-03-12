@@ -1,7 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#include <time.h>
 #define lp 1000
+#define MAX(a,b) (a>b)?a:b
 
 double c_od,c_do;
 
@@ -31,6 +33,17 @@ double trapezy(double (*f)(double))
        
 double mc(double(*f)(double))
 {
-        return 1;
+        srand(time(NULL));
+        int dokladnosc = lp*100; //liczba losowanych punktow pomnozona przez 100
+        int i;  //zmienna iteracyjna na potrzeby petli
+        double suma_wartosci = 0;
+        double a;
+        for(i = 0; i < dokladnosc; i++)
+        {
+                a = c_od + (double)rand() / (double)(dokladnosc + 1) * (c_do - c_od);
+                suma_wartosci += (*f)(a);
+        }
+        double pole = fabs(c_do - c_od) * suma_wartosci / dokladnosc;
+        return pole;
 }
 
