@@ -30,13 +30,14 @@ int main(int argc, char *argv[])
     printf( "wynik trapezy    - %lf\n" ,trapezy(f2));
     printf("wynik MC   - %lf\n", mc(f2));
     printf ("\n\nFunkcja 3 \n");
-	printf( "wynik prostokaty - %lf\n" ,prostokaty(f3_kuba));
-    printf( "wynik trapezy    - %lf\n" ,trapezy(f3_kuba));
-    printf( "wynik MC   - %lf\n", mc(f3_kuba));
+	printf( "wynik prostokaty - %lf\n" ,prostokaty(f3));
+    printf( "wynik trapezy    - %lf\n" ,trapezy(f3));
+    printf( "wynik MC   - %lf\n", mc(f3));
     printf ("\n\nFunkcja 4 \n");
-	printf( "wynik prostokaty - %lf\n" ,prostokaty(f4_kuba));
-    printf( "wynik trapezy    - %lf\n" ,trapezy(f4_kuba));
-    printf( "wynik MC   - %lf\n", mc(f4_kuba));
+	printf( "wynik prostokaty - %lf\n" ,prostokaty(f4));
+    printf( "wynik trapezy    - %lf\n" ,trapezy(f4));
+    printf( "wynik MC   - %lf\n", mc(f4));
+
     
     system("PAUSE");
     return 0;
