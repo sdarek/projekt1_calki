@@ -5,8 +5,16 @@
 #define lp 10000
 #define MAX(a,b) (a>b)?a:b
 
-double c_od,c_do;
+double c_od, c_do;
 
+double f3_kamil(double x)
+{
+        return x * x + 3;
+}
+double f4_kamil(double x)
+{
+        return exp(1) * x + sin(2 * x);
+}
 double f3_kuba(double x)
 {
         return log(x*x + 2) - 3;   
@@ -19,18 +27,18 @@ double f3_darek(double x)
 {
     return (x*x*x-x*x-2*x+15);
 }
-double f4_darek(double x) {
-
+double f4_darek(double x) 
+{
     return (2*sin(x) - cos(x)*x + 10);
 }
 
 double prostokaty(double(*f)(double))
 {
-       double krok, p, suma=0;
-       krok=(c_do-c_od)/lp;
-       for(p=c_od; p<c_do; p+=krok)
-               suma+=(*f)(p)*krok;
-       return suma;      
+        double step, i, sum = 0;
+        step = (c_do - c_od) / lp;
+        for (i = c_do; i > c_od; i -= step)
+                sum += (*f)(i)*step;
+        return sum;
 }
 
 double trapezy(double (*f)(double))
@@ -47,8 +55,8 @@ double trapezy(double (*f)(double))
         }
         return suma;
 }
-       
-double mc(double(*f)(double))
+
+double mc(double (*f)(double))
 {
         srand(time(NULL));
         int dokladnosc = lp * 1000;
@@ -90,4 +98,3 @@ double mc(double(*f)(double))
         calka = (P * count) / dokladnosc;
         return calka;
 }
-
