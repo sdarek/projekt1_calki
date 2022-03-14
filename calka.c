@@ -14,7 +14,6 @@ double f2(double x)
     return y;       
 }
 
-
 int main(int argc, char *argv[])
 {
     
@@ -38,6 +37,7 @@ int main(int argc, char *argv[])
 	printf( "wynik prostokaty - %lf\n" ,prostokaty(f4));
     printf( "wynik trapezy    - %lf\n" ,trapezy(f4));
     printf( "wynik MC   - %lf\n", mc(f4));
+
     
     system("PAUSE");
     return 0;
